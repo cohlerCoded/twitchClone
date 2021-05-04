@@ -2,11 +2,18 @@ import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 
 const App = () => {
-  const PageOne = () => <div>PAGE ONE</div>;
+  const PageOne = () => (
+    <div>
+      PAGE ONE
+      <a href="/pagetwo">Go To Page Two</a>
+    </div>
+  );
   const PageTwo = () => (
     <div>
       PAGE TWO
-      <button>Click ME</button>
+      <a href="/">
+        <button>Go To Page One</button>
+      </a>
     </div>
   );
   return (
