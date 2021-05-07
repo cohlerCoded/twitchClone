@@ -1,3 +1,7 @@
+if (process.env.NODE_ENV !== "production") {
+  require("dotenv").config();
+}
+
 import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 
