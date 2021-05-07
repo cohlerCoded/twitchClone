@@ -1,7 +1,3 @@
-if (process.env.NODE_ENV !== "production") {
-  require("dotenv").config();
-}
-
 import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 
@@ -12,6 +8,9 @@ import StreamShow from "./streams/StreamShow";
 import StreamEdit from "./streams/StreamEdit";
 import StreamDelete from "./streams/StreamDelete";
 
+if (process.env.NODE_ENV !== "production") {
+  require("dotenv").config();
+}
 const App = () => {
   return (
     <div className="ui component">
