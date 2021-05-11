@@ -12,8 +12,9 @@ class StreamCreate extends React.Component {
     }
   }
   renderInput = ({ input, label, meta }) => {
+    const className = `field ${meta.error && meta.touched ? "error" : ""}`;
     return (
-      <div className="field">
+      <div className={className}>
         <label htmlFor="description">{label}</label>
         <input {...input} />
         {this.renderError(meta)}
