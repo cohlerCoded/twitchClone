@@ -29,7 +29,7 @@ class StreamCreate extends React.Component {
     return (
       <div>
         <form
-          className="ui form"
+          className="ui form error"
           onSubmit={this.props.handleSubmit(this.onSubmit)}
         >
           <Field
