@@ -1,4 +1,4 @@
-import actions from "redux-form/lib/actions";
+import _ from "lodash";
 import {
   CREATE_STREAM,
   FETCH_STREAM,
@@ -15,6 +15,8 @@ export default (state = {}, action) => {
       return { ...state, [action.payload.id]: action.payload };
     case EDIT_STREAM:
       return { ...state, [action.payload.id]: action.payload };
+    case DELETE_STREAM:
+      return _.omit(state, action.payload);
     default:
       return state;
   }
