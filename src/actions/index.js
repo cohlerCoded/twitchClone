@@ -1,3 +1,4 @@
+import { Redirect } from "react-router";
 import streams from "../apis/streams";
 import {
   SIGN_IN,
