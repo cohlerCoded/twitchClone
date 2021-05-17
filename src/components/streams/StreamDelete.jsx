@@ -2,7 +2,7 @@ import React from "react";
 import Modal from "../Modal";
 import history from "../../history";
 
-export default function StreamDelete() {
+const StreamDelete = () => {
   const actions = (
     <>
       <button className="ui button negative">Delete</button>
@@ -20,4 +20,5 @@ export default function StreamDelete() {
       />
     </div>
   );
-}
+};
+export default StreamDelete;
