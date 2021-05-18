@@ -8,6 +8,12 @@ class StreamDelete extends React.Component {
   componentDidMount() {
     this.props.fetchStream(this.props.match.params.id);
   }
+  renderContent() {
+    if (!this.props.stream)
+      return "Are you sure you want to delete this stream?";
+    else
+      return `Are you sure you want to delete the stream: ${this.props.stream.title}?`;
+  }
   render() {
     const actions = (
       <>
@@ -16,16 +22,16 @@ class StreamDelete extends React.Component {
       </>
     );
     return (
-      <div>
-        StreamDelete
-        <Modal
-          header="Delete Stream"
-          content="Are you sure you want to delete this stream?"
-          actions={actions}
-          onClick={() => history.push("/")}
-        />
-      </div>
+      <Modal
+        header="Delete Stream"
+        content={this.renderContent()}
+        actions={actions}
+        onClick={() => history.push("/")}
+      />
     );
   }
 }
-export default connect(null, { fetchStream })(StreamDelete);
+const mapStateToProps = (state, ownProps) => {
+  return { stream: state.streams[ownProps.match.params.id] };
+};
+export default connect(mapStateToProps, { fetchStream })(StreamDelete);
