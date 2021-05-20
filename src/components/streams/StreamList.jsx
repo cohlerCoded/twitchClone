@@ -33,7 +33,7 @@ class StreamList extends React.Component {
           {this.renderButtons(stream)}
           <i className="large middle aligned icon camera" />
           <div className="content">
-            <Link className="header" to={`/streams/show/${stream.id}`}>
+            <Link className="header" to={`/streams/${stream.id}`}>
               {stream.title}
             </Link>
             <div className="description">{stream.description}</div>
